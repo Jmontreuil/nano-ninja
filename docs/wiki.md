@@ -326,6 +326,26 @@ The barrier to entry for all challenge tiers is commitment and courage, not hidd
 
 -----
 
+## Hard Mode – Gauntlet Trigger and Environmental Design
+
+### The Overcharge Trigger
+Activating hard mode is framed in-universe as overcharging the matter replication system. The player isn't simply forfeiting their upgrades — they are weaponising the corporation's own infrastructure against itself. The building becomes hostile to everyone, including the player. This gives the mechanical sacrifice narrative weight: you're not just choosing to be weaker, you're choosing to destabilise everything.
+
+### The Environmental Gauntlet
+With the matter replication system overloaded, the building itself becomes the gauntlet. Matter projections destabilise unpredictably, environmental hazards activate, and the structure begins coming apart. The final mech fight takes place on top of the ruined building and includes a significant environmental challenge component — the arena itself is dangerous, not just the mech.
+
+### The Opt-Out Problem
+Players who trigger the gauntlet may want or need a way out. Several options are under consideration:
+
+- **Point of no return warning** — A clear confirmation screen before the overcharge locks in, with language like "the matter replication system is destabilising — there is no return from this." No mid-gauntlet exit, but no accidental triggers.
+- **Surrender with cost** — Players can exit via the pause menu at any time, but doing so permanently costs their upgrade points for that run. Quitting is possible but not free.
+- **Physical in-world exit** — An in-universe emergency terminal somewhere in the gauntlet that stabilises the system and ends the run. Quitting requires navigating to it under pressure, keeping immersion intact.
+- **Natural off-ramps** — Stabilisation zones between gauntlet sections where the player can choose to continue or stand down. No penalty, framed as a tactical decision rather than giving up.
+
+The preferred direction aligns with the design philosophy: the barrier is commitment, and even the exit should require something from the player rather than being a simple menu button. Options 3 and 4 are most consistent with this.
+
+-----
+
 ## Endless and Tower Mode
 
 ### Framing

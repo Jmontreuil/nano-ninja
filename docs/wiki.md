@@ -65,14 +65,18 @@ The chip raises a persistent thematic question about dependency and augmentation
 **The Corporation**
 The corporation you infiltrated in Stage 1 is the same one now holding you. The commander’s handoff wasn’t a rescue — you were passed along as an interesting specimen. You are not a prisoner of war. You are a research subject.
 
+<!--
 **The Scientists**
 The scientists working on you become relevant later. The research conducted during your captivity leads to the creation of clone enemies — nano androids, matter projections of you, created from data gathered during your time on the table. You are fighting copies of yourself.
+-->
 
 **The Lab Simulator**
 The endless mode simulator isn’t something the corporation gave you access to. You are an escaped captive exploiting their own infrastructure against them. Every training session is an act of defiance.
 
+<!--
 **The Antimatter Question**
 Antimatter is the most effective counter to clone enemies — it destabilises their matter projection matrix directly. But the clones are made from you. The player may need to confront what it means to annihilate copies of themselves. This thread is to be developed narratively.
+-->
 
 **Defeated by a Little Pup**
 To be developed.
@@ -111,9 +115,11 @@ Your chip communicates with the facility’s nano AI infrastructure. Physical pr
 
 A finite item found throughout the game. Spending it unlocks chip upgrades. Saving all of it instead unlocks a secret final boss. The player faces this choice from the moment the resource is introduced in Stage 2.
 
+<!--
 ### Matter Defeated
 
 A stat tracked separately from regular kills. Destroying a clone — a matter projection of yourself — is a categorically different act from defeating a human enemy. This stat may feed into mechanics and is narratively significant.
+-->
 
 -----
 
@@ -159,6 +165,7 @@ Triggered by a timed shoulder input. Deliberate and reactive — distinct from t
 - Builds the shared nano charge meter
 - In hard mode specifically, acts as the skill-based defensive lifeline replacing upgrade-based offense
 
+<!--
 ### Clone Combat
 
 Clone enemies are matter projections of the player created from research conducted during captivity. They:
@@ -171,6 +178,7 @@ Clone enemies are matter projections of the player created from research conduct
 - Are vulnerable to antimatter — which destabilises their projection matrix directly
 
 Fighting clones is a dance of movement and timing. A fundamentally different combat problem from fighting human enemies.
+-->
 
 -----
 
@@ -205,9 +213,11 @@ Located at designated points in the environment. Free to use. Exist so players n
 
 - See [Nano and Antimatter Systems](#nano-and-antimatter-systems)
 
+<!--
 **Antimatter**
 
 - See [Nano and Antimatter Systems](#nano-and-antimatter-systems)
+-->
 
 -----
 
@@ -221,7 +231,9 @@ Two distinct combat philosophies built into the same system.
 
 **Nano** is biological and systemic. It spreads, corrupts, and builds over time. It works with and through living and electronic systems. Patient, cascading, networked. The hacker’s toolkit.
 
+<!--
 **Antimatter** is physics-based and absolute. It annihilates on contact. No buildup, no spreading, immediate and terminal. The weapon you’re not supposed to have.
+-->
 
 In a room full of enemies nano turns the battlefield into a managed cascade. Antimatter turns a single target into nothing. Different tools for different problems — and different philosophies about what kind of fighter you are.
 
@@ -260,12 +272,14 @@ The full contagion chain: **parry → apply nano → contagion spreads → meter
 
 Built by successful parries. When full, triggers a nano burst — a room-wide pulse that applies the current active nano type to every enemy present simultaneously. In a room full of enemies this is the power fantasy moment. The meter rewards defensive skill with explosive offensive payoff.
 
+<!--
 ### Antimatter
 
 - Natural counter to matter projection clone enemies — destabilises their construction directly
 - Feeds a separate charge mechanic potentially tied to the Matter Defeated stat
 - Immediate and unambiguous — no setup, no spreading, just annihilation
 - Narratively weighted: the clones are made from you. Antimatter destroys copies of yourself.
+-->
 
 ### Nano in Hard Mode
 
@@ -372,8 +386,8 @@ Each run in endless or tower mode draws a random set of modifiers that change th
 
 - No parry available
 - Nano effects spread twice as fast
-- Antimatter only
-- Clones only
+<!-- - Antimatter only -->
+<!-- - Clones only -->
 - Double dash from the start
 - Nano meter starts full
 - Matter Defeated multiplier active
@@ -393,7 +407,7 @@ Procedural generation is a tool, not a goal. Hand-crafted story, procedural repl
 - **Endless and tower mode** — hand-crafted components assembled procedurally. Designed pieces, dynamic arrangement. Feels designed rather than random.
 - **Enemy group composition** — encounter budgets define room difficulty, specific enemies selected from a pool. Fresh on replays without disrupting designed experience.
 - **Nano combinations in endless mode** — each run seeds different active nano types or starting upgrade nodes. Forces adaptation.
-- **Clone behaviour** — weighted toward countering the player’s most used moves. Tracks combat history and adjusts dynamically.
+<!-- - **Clone behaviour** — weighted toward countering the player’s most used moves. Tracks combat history and adjusts dynamically. -->
 - **Procedural modifiers** — random run conditions in endless and tower mode.
 
 ### Where Procedural Generation Is Not Used

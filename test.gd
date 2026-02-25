@@ -20,3 +20,4 @@ func _input(event):
         print("ATTACK triggered")
     if event.is_action_pressed("parry"):
         print("PARRY triggered")
+

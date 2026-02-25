@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://gg4pkmtvodh4"]
+
+[ext_resource type="PackedScene" uid="uid://d14gmmut4nvd5" path="res://scenes/player/player.tscn" id="1_xkfre"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kcrv"]
+size = Vector2(1152, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkfre"]
+size = Vector2(20, 648)
+
+[node name="DebugRoom" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_xkfre")]
+position = Vector2(578, 320)
+
+[node name="WallTop" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop"]
+position = Vector2(576, 10)
+shape = SubResource("RectangleShape2D_6kcrv")
+
+[node name="WallBottom" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom"]
+position = Vector2(576, 638)
+shape = SubResource("RectangleShape2D_6kcrv")
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+position = Vector2(10, 324)
+shape = SubResource("RectangleShape2D_xkfre")
+
+[node name="WallRight" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+position = Vector2(1142, 324)
+shape = SubResource("RectangleShape2D_xkfre")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(576, 324)

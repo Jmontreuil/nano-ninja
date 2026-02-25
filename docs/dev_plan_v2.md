@@ -88,6 +88,11 @@ of it. These decisions become assumptions everything else rests on.*
 - [ ] Define and lock the game palette as shader uniforms
 - [ ] Document pipeline settings in `docs/visual_bible.md`
 - [ ] Package techniques as reusable shader includes for later use
+- [ ] **Reflection shader** — wet floor and surface reflections for the cyberpunk environment
+  - [ ] Define reflection mask textures — greyscale masks painted in Aseprite controlling which surfaces reflect (puddles, polished floors, metal panels)
+  - [ ] Implement distorted screen-space reflection using mask as coverage map
+  - [ ] Run reflection through pixel art pipeline — dithered edges, palette restricted, animated at sprite framerate
+  - [ ] Document mask creation workflow in `docs/visual_bible.md`
 - [ ] Note: this work is also R&D for a potential pixel art shader
       asset pack — document decisions and reasoning throughout
 

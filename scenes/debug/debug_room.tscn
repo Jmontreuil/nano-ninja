@@ -42,16 +42,15 @@ offset_bottom = 33.0
 
 [node name="WallTop" type="StaticBody2D" parent="Collisions"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/WallTop"]
-position = Vector2(576, 10)
-shape = SubResource("RectangleShape2D_6kcrv")
-
 [node name="ColorRect" type="ColorRect" parent="Collisions/WallTop"]
 visible = false
 offset_left = 4.0
 offset_right = 1137.0
 offset_bottom = 25.0
 color = Color(0.68859524, 0.6885953, 0.6885953, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/WallTop"]
+polygon = PackedVector2Array(-13, -3, -12, -63, 1189, -53, 1190, 274, 1131, 274, 1123, -3)
 
 [node name="WallBottom" type="StaticBody2D" parent="Collisions"]
 

@@ -259,3 +259,59 @@ at the correct moments.
 ### Key Advantage
 No separate testing codebase is required. Enemy AI systems and test bots share the same
 logic pointed in different directions. Systems built for gameplay double as quality assurance tools.
+
+---
+
+## Patrol Drone — First Enemy
+
+### Concept
+The first enemy the player encounters. Simple, readable, non-threatening alone. Teaches the dash interaction early at minimal cost.
+
+---
+
+### Visual Design
+**Body:** Tall and narrow central column. Soft white plastic with thin engraved detail lines. Reads cleanly against the dark arcology palette.
+
+**Legs:** Four legs, tall and narrow. Crab-like stance and movement. Sharp toes — the attack surface. At target pixel height legs will be approximately 2-3 pixels wide — four legs keeps the silhouette readable at small sizes.
+
+**Face:** Dead center — a bright red circular lens surrounded by a chrome circular bracket. Single focal point. The player's eye goes immediately to the red lens, which is also where the danger communicates from. Good design economy — the visual focal point and the threat read from the same place.
+
+**Color language:** Soft white and chrome against dark blues, greens, and purples of the arcology. High contrast without being visually complex. Reads clearly at combat distance.
+
+---
+
+### Movement
+Crab-like lateral movement. The tall narrow body moves above the legs without rotating — the legs do the directional work while the central column stays upright. At the cavalier oblique camera angle the leg movement will be very readable from above, the body will read as a vertical column.
+
+---
+
+### Attack — Leg Jab
+One leg facing the player lifts and jabs forward with the sharp toe. The lifting leg breaks the crab movement pattern — a readable tell that an attack is incoming.
+
+**Damage:** Minimal. This enemy is an introduction, not a threat.
+
+**Dash interaction:**
+- Dashing into the jab during the active frames knocks the player back and cancels the dash
+- Teaches early that dashing is not unconditionally safe
+- Some attacks punish committed dashes — this is the first lesson
+
+---
+
+### Dash Punishment — Design Note
+The patrol drone introduces the dash punishment mechanic at minimal cost. The knockback is small, the damage is low, the lesson is gentle.
+
+Harder enemies scale this interaction significantly:
+- Larger enemies have attacks that deal more damage on a blocked dash
+- The lesson taught cheaply by the patrol drone is paid off harshly by later enemies
+- Players who learn to read attack tells early are rewarded later
+- Players who dash carelessly are punished progressively harder
+
+This is a difficulty curve that lives in the combat system rather than in enemy health values. The player gets smarter or they get punished.
+
+---
+
+### Role in the Game
+- First combat encounter — sets expectations for the combat system
+- Teaches: dashing is not always safe, attacks have readable tells
+- Low threat alone, moderate threat in groups
+- Visually establishes the corporate security aesthetic — clean, manufactured, clinical. The arcology's maintenance drones repurposed or redeployed as security assets.

@@ -298,3 +298,54 @@ own durations, easing curves, and target values.
 ```
 
 See [floor-transitions.md](../technical/floor-transitions.md) for the full FloorTransitionManager implementation.
+
+---
+
+## Normal Maps at Cavalier Oblique Angle
+
+### The Fundamental Tension
+Normal maps are designed around the assumption that the viewer is looking at a surface more or less face-on. At a steep overhead angle the relationship between encoded normals and the viewer's perspective starts to break down.
+
+At 55-60 degrees the front face of characters and environments is still partially facing the viewer — normal maps will work there. The top face is nearly perpendicular to the camera. Light hitting the top face from the side will produce correct responses. Light hitting it from above will produce very little response because the surface is already facing the light source directly.
+
+### What Will Work Well
+**Front-facing surfaces** — character torsos, wall faces, door panels, anything with a front face toward the camera — will respond to normal maps exactly as expected. Panel lines on armour, surface texture on walls, carved detail on architecture will all catch light dynamically as PointLight2D nodes move.
+
+This is where normal maps matter most for this game. The character's front face is the primary read surface. Normal map detail there — armour plating, nano circuitry patterns, fabric folds — will look compelling under dynamic lighting.
+
+### What Will Be Subtle or Invisible
+**Top faces of objects** — floors, tops of crates, horizontal surfaces — will show minimal normal map response at this camera angle. The normals are pointing almost directly at the camera, which means they are pointing almost directly away from most lateral light sources.
+
+Dynamic lighting on floor surfaces will be driven more by diffuse texture and light color than by normal map detail. This is acceptable — floor surfaces are read as floor, not as detailed surfaces. The visual interest lives on vertical surfaces and characters, which is exactly where normal maps perform best at this angle.
+
+### The Unknown — Floor Transitions and Zoom
+How normal maps perform during floor transitions is genuinely unpredictable until tested. As camera zoom changes the player's apparent relationship to light sources shifts. This could be spectacular or could produce inconsistent results that need tuning. Unknown until real assets are in Godot with real lights.
+
+### The Phase 0.5 Normal Map Test
+Before committing to the full normal map pipeline for every asset, run one focused test during Phase 0.5:
+
+- [ ] Render a simple character stand-in from Cinema 4D at locked angle
+- [ ] Generate its normal map from the same scene
+- [ ] Import diffuse sprite and normal map into Godot
+- [ ] Place a PointLight2D at several positions around the sprite
+- [ ] Move the light in real time — watch how the surface responds
+- [ ] Test at multiple zoom levels to observe behaviour during floor transitions
+- [ ] Document findings in `docs/visual_bible.md`
+
+### Where to Invest Normal Map Detail
+
+**High value — invest detail here:**
+- Character front faces — torso, arms, visible armour panels
+- Wall faces — architectural detail, panel lines, surface texture
+- Door and transition surfaces — visible front face geometry
+- Enemy front faces — readable at combat distance
+
+**Low value — minimal detail needed:**
+- Floor surfaces — top face, minimal light response
+- Tops of crates and props — top face, minimal light response
+- Ceiling geometry — rarely visible, not worth detailed normals
+
+**Unknown until tested:**
+- Character top surfaces during steep zoom
+- Floor transition response during zoom tween
+- Foreground element response close to camera

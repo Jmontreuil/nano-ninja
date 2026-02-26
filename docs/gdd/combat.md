@@ -451,3 +451,91 @@ sig_gesture_recognised.emit(move_name, quality_float)
 ```
 
 Input device branching must be designed in from the start — not retrofitted.
+
+---
+
+## Dash Anticipation and Charge State
+
+### The Concept
+The dash is not a press-to-go input. It is a draw-and-release. The player pulls back on the stick, the character reads the intent and holds tension, the dash fires on release. The anticipation is part of the input.
+
+This aligns with the gestural, embodied input philosophy and the Skate reference — in Skate you load tricks through stick position before executing. The anticipation is not a delay, it is a commitment.
+
+**Input method:** Flick and release. No button. The stick motion is the entire input — pull back to charge, release to fire.
+
+---
+
+### Mechanical Possibilities
+Hold duration opens a design space:
+
+**Brief hold** — acknowledges intent, plays anticipation animation, fires standard dash on release. Visual read improves, mechanic unchanged.
+
+**Longer hold** — builds charge, modifies the dash. Options include:
+- More distance or speed
+- More invulnerability frames
+- More damage on the arrival strike
+- More spectacular visual effect on execution
+
+**Overcharge** — held too long. Either fires automatically or applies a penalty. Overcommitment having a cost is interesting design.
+
+These do not need to be decided now. The signal architecture must accommodate them from the start.
+
+---
+
+### Signals — Updated Dash Signal Set
+
+```gdscript
+# Existing signals — unchanged
+sig_dash_started(direction)
+sig_dash_ended
+sig_dash_ready
+sig_invulnerability_started
+sig_invulnerability_ended
+
+# New — charge lifecycle
+sig_dash_charge_started(direction)    # stick pulled back, charge begins
+sig_dash_charge_building(charge_pct)  # emitted each frame, 0.0 to 1.0
+sig_dash_charge_released(charge_pct)  # stick released, dash fires
+sig_dash_charge_cancelled             # player released without committing
+```
+
+`sig_dash_charge_building` is the key signal — the charge percentage it carries drives multiple systems simultaneously:
+- Animation controller — scales anticipation effect as charge grows
+- Combat system — determines dash properties on release
+- Shader system — drives power buildup visual on character or weapon
+
+`sig_dash_charge_started(direction)` carries direction — the anticipation animation needs to know which way the character is about to move. A character anticipating a rightward dash leans right. Direction at charge start feeds into the approach vector system.
+
+---
+
+### Animation States — Updated Set
+
+```
+idle
+dash_anticipation    ← plays when charge starts
+dash_charge          ← loops while charge builds, scales with charge_pct
+dash                 ← fires on release
+dash_land            ← arrival
+i_frame
+attack               ← stub, defined fully in Phase 1
+```
+
+**dash_charge** is the visually interesting state. At low charge percentage: subtle — slight crouch, lean into direction. At high charge percentage: dramatic — energy gathering, character coiled.
+
+The charge percentage can drive:
+- How far through the animation plays
+- A shader parameter on the character directly
+- Both simultaneously
+
+---
+
+### Connection to Existing Systems
+The charge percentage signal connects to systems already designed:
+
+**Execution quality** — charge level at release contributes to execution quality. A fully charged release produces more spectacular effects than a quick flick.
+
+**Nano system** — a fully charged dash arrival could apply nano on contact, connecting movement and nano spread into one action.
+
+**Persistent particles** — dash charge buildup could accumulate particles around the character, releasing them on the dash itself. Visual charge that becomes visual speed.
+
+**Combat loop** — the anticipation state is the moment between approach and strike. It is readable to enemies and to other players watching. Skilled play looks different because the charge is visible.
